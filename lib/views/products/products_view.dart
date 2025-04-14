@@ -4,10 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../../core/designs/app_images.dart';
+import '../../../core/designs/app_images.dart';
 import '../../features/products/cubit.dart';
 import '../../features/products/models.dart';
 import '../../features/products/states.dart';
+
 
 part 'items_products.dart';
 part 'loading_products.dart';

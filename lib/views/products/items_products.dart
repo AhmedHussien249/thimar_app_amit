@@ -25,10 +25,11 @@ class _ItemState extends State<_Item> {
                 spreadRadius: 0),
           ]),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           AppImages(
             widget.model.mainImage,
-            height: 140.h,
+            height: 100.h,
             width: double.infinity.w,
             fit: BoxFit.cover,
           ),
@@ -60,7 +61,7 @@ class _ItemState extends State<_Item> {
               ],
             ),
           ),
-          SizedBox(height: 5.h),
+          SizedBox(height: 10.h),
           Text(
             widget.model.description,
             maxLines: 3,
@@ -89,7 +90,7 @@ class _ItemState extends State<_Item> {
               ],
             ),
           ),
-          SizedBox(height: 5.h),
+          // SizedBox(height: 5.h),
           Align(
             alignment: AlignmentDirectional.bottomEnd,
             child: CircleAvatar(

@@ -39,8 +39,10 @@ class DioHelper {
 
 class CustomResponse {
   final bool isSuccess;
-  final String? message;
+   String? message;
   final dynamic data;
 
-  CustomResponse({required this.isSuccess, this.message, this.data});
+  CustomResponse({required this.isSuccess, this.message, this.data}){
+    message = message ?? data['message']??"failed try again later";
+  }
 }

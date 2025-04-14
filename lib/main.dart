@@ -7,6 +7,7 @@ import 'core/logic/app_theme.dart';
 import 'core/logic/cache_helper.dart';
 import 'core/logic/helper.dart';
 import 'service_locator.dart';
+import 'views/auth/register.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

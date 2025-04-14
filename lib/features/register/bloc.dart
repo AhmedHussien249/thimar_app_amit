@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:themar_app_amit/views/auth/login.dart';
 
 import '../../core/logic/dio_helper.dart';
 import '../../core/logic/helper.dart';
@@ -38,6 +39,7 @@ class RegisterBloc extends Bloc<RegisterEvents, RegisterStates> {
       if (response.isSuccess) {
         showMessage(response.message!, messageType: MessageType.success);
         // navigateTo(OTPView(phone: phoneController.text));
+        navigateTo(LoginView(),keepHistory: false);
         emit(RegisterSuccessState());
       } else {
         showMessage(response.message!);
