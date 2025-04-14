@@ -6,6 +6,7 @@ import 'package:themar_app_amit/views/auth/login.dart';
 
 import '../../core/logic/dio_helper.dart';
 import '../../core/logic/helper.dart';
+import '../../views/auth/otp.dart';
 
 part 'events.dart';
 part 'states.dart';
@@ -38,8 +39,7 @@ class RegisterBloc extends Bloc<RegisterEvents, RegisterStates> {
       });
       if (response.isSuccess) {
         showMessage(response.message!, messageType: MessageType.success);
-        // navigateTo(OTPView(phone: phoneController.text));
-        navigateTo(LoginView(),keepHistory: false);
+         navigateTo(OTPView(phone: phoneController.text));
         emit(RegisterSuccessState());
       } else {
         showMessage(response.message!);

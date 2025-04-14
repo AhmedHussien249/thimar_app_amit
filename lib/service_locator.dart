@@ -6,6 +6,7 @@ import 'features/cart/bloc.dart';
 import 'features/category_section/cubit.dart';
 import 'features/contuct_us/bloc.dart';
 import 'features/login/bloc.dart';
+import 'features/otp/bloc.dart';
 import 'features/products/cubit.dart';
 import 'features/register/bloc.dart';
 import 'features/slider/cubit.dart';
@@ -16,6 +17,7 @@ void initServiceLocator() {
   container.registerSingleton(DioHelper());
   container.registerFactory(() => LoginBloc(GetIt.instance<DioHelper>()));
   container.registerFactory(() => RegisterBloc(GetIt.instance<DioHelper>()));
+  container.registerFactory(() => OTPBloc(GetIt.instance<DioHelper>()));
   container.registerFactory(() => ContactUsBloc(GetIt.instance<DioHelper>()));
   container
       .registerFactory(() => UpdateCartItemBloc(GetIt.instance<DioHelper>()));

@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           home: child),
-      child: const LoginView(),
+      child: const RegisterView(),
     );
   }
 }
