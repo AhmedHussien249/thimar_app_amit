@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../../core/designs/app_images.dart';
-import '../../features/category_section/cubit.dart';
-import '../../features/category_section/states.dart';
+import '../../../../../../core/designs/app_images.dart';
+import '../../../../../../features/category_section/bloc.dart';
+
 
 part 'loading_category.dart';
 
@@ -18,32 +18,32 @@ class CategorySection extends StatefulWidget {
 }
 
 class _CategorySectionState extends State<CategorySection> {
-  final cubit = GetIt.instance<CategoriesCubit>();
+  final cubit = GetIt.instance<CategoriesBloc>();
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder(
       bloc: cubit,
       builder: (context, state) {
-        if (state is CategoriesErrorState) {
+        if (state is GetCategoriesFailedState) {
           return SizedBox(
             height: 128.h,
             child: Column(
               children: [
                 Center(
                   child: Text(
-                    state.message,
+                    state.msg,
                     style: const TextStyle(color: Colors.red),
                   ),
                 ),
                 FilledButton(
-                  onPressed: () => cubit.getData(),
+                  onPressed: () { cubit.add(GetCategoriesEvent());},
                   child: const Text("اعادة المحاولة"),
                 )
               ],
             ),
           );
-        } else if (state is CategoriesSuccessState) {
+        } else if (state is GetCategoriesSuccessState) {
           return SizedBox(
             height: 128.h,
             child: Column(

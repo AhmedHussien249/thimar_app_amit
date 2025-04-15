@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app_amit/views/auth/login.dart';
+import 'package:themar_app_amit/views/home/view.dart';
+import 'package:themar_app_amit/views/sections_view.dart';
 
 import 'core/logic/app_theme.dart';
 import 'core/logic/cache_helper.dart';
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           home: child),
-      child: const RegisterView(),
+      child: const HomeView(),
     );
   }
 }

@@ -1,17 +1,14 @@
-import 'models.dart';
+part of 'bloc.dart';
+class CategoriesStates{}
 
-class CategoriesStates {}
-
-class CategoriesSuccessState extends CategoriesStates {
+class GetCategoriesLoadingState extends CategoriesStates{}
+class GetCategoriesSuccessState extends CategoriesStates{
   final List<CategoryModel> list;
 
-  CategoriesSuccessState({required this.list});
+  GetCategoriesSuccessState({required this.list});
 }
+class GetCategoriesFailedState extends CategoriesStates{
+  final String msg;
 
-class CategoriesErrorState extends CategoriesStates {
-  final String message;
-
-  CategoriesErrorState({required this.message});
+  GetCategoriesFailedState({required this.msg});
 }
-
-class CategoriesLoadingState extends CategoriesStates {}

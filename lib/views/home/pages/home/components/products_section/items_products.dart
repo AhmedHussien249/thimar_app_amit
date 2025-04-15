@@ -1,7 +1,7 @@
-part of 'products_view.dart';
+part of 'products_section_view.dart';
 
 class _Item extends StatefulWidget {
-  final ProductsModels model;
+  final ProductModel model;
 
   const _Item({required this.model});
 
@@ -28,7 +28,7 @@ class _ItemState extends State<_Item> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           AppImages(
-            widget.model.mainImage,
+            widget.model.image,
             height: 100.h,
             width: double.infinity.w,
             fit: BoxFit.cover,
@@ -48,7 +48,7 @@ class _ItemState extends State<_Item> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    widget.model.toggleFavorite();
+                    widget.model.toggle();
                     setState(() {});
                   },
                   child: Icon(
@@ -72,7 +72,7 @@ class _ItemState extends State<_Item> {
             child: Row(
               children: [
                 Text(
-                  "${widget.model.price}\$",
+                  "${widget.model.priceAfter}\$",
                   style: TextStyle(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class _ItemState extends State<_Item> {
                 ),
                 SizedBox(width: 2.5.w),
                 Text(
-                  "${widget.model.priceBeforeDiscount}\$",
+                  "${widget.model.priceBefore}\$",
                   style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.bold,

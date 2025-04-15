@@ -3,11 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:themar_app_amit/core/designs/app_images.dart';
+import 'package:themar_app_amit/features/products/bloc.dart';
 
-import '../../../core/designs/app_images.dart';
-import '../../features/products/cubit.dart';
-import '../../features/products/models.dart';
-import '../../features/products/states.dart';
+
 
 
 part 'items_products.dart';
@@ -21,32 +20,32 @@ class ProductsSection extends StatefulWidget {
 }
 
 class _ProductsSectionState extends State<ProductsSection> {
-  final cubit = GetIt.instance<ProductsCubit>();
+  final cubit = GetIt.instance<ProductsBloc>();
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder(
         bloc: cubit,
         builder: (context, state) {
-          if (state is ProductsErrorState) {
+          if (state is GetProductsFailedState) {
             return SizedBox(
               height: 218.h,
               child: Column(
                 children: [
                   Center(
                     child: Text(
-                      state.message,
+                      state.msg,
                       style: const TextStyle(color: Colors.red),
                     ),
                   ),
                   FilledButton(
-                    onPressed: () => cubit.getData(),
+                    onPressed: () => cubit.add(GetProductsEvent()),
                     child: const Text("اعادة المحاولة"),
                   )
                 ],
               ),
             );
-          } else if (state is ProductsSuccessState) {
+          } else if (state is GetProductsSuccessState) {
             return GridView.builder(
               padding: EdgeInsets.all(16.h.w),
               physics: const NeverScrollableScrollPhysics(),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'categories/category_section_view.dart';
-import 'products/products_view.dart';
-import 'sliders/slider_view.dart';
+import 'home/pages/home/components/category_section/category_section_view.dart';
+import 'home/pages/home/components/products_section/products_section_view.dart';
+import 'home/pages/home/components/slider_section/slider_view.dart';
 
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 

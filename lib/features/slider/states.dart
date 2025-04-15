@@ -1,18 +1,20 @@
-import 'model.dart';
 
-class SliderStates {}
 
-class SliderLoadingStates extends SliderStates {}
+part of 'bloc.dart';
+class SliderStates{}
 
-class SliderSuccessStates extends SliderStates {
-  final List<SlidersModel> list;
+class GetSliderLoadingState extends SliderStates{}
+class GetSliderFailedState extends SliderStates{
+  final String msg;
+
+  GetSliderFailedState({required this.msg});
+}
+class GetSliderSuccessState extends SliderStates{
+  final List<SliderModel> list;
   final int currentIndex;
 
-  SliderSuccessStates({required this.list, required this.currentIndex});
-}
 
-class SliderErrorStates extends SliderStates {
-  final String message;
 
-  SliderErrorStates({required this.message});
+  GetSliderSuccessState({required this.list,required this.currentIndex});
+
 }

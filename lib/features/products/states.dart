@@ -1,17 +1,15 @@
-import 'models.dart';
+part of "bloc.dart";
+class ProductsStates{}
 
-class ProductsStates {}
+class GetProductsLoadingState extends ProductsStates{}
+class GetProductsFailedState extends ProductsStates{
+  final String msg;
 
-class ProductsLoadingState extends ProductsStates {}
-
-class ProductsErrorState extends ProductsStates {
-  final String message;
-
-  ProductsErrorState({required this.message});
+  GetProductsFailedState({required this.msg});
 }
+class GetProductsSuccessState extends ProductsStates{
+  final List<ProductModel> list;
 
-class ProductsSuccessState extends ProductsStates {
-  final List<ProductsModels> list;
+  GetProductsSuccessState({required this.list});
 
-  ProductsSuccessState({required this.list});
 }

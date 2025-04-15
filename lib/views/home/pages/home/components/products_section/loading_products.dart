@@ -1,4 +1,4 @@
-part of 'products_view.dart';
+part of 'products_section_view.dart';
 
 class _Loading extends StatelessWidget {
   const _Loading();
