@@ -16,7 +16,7 @@ class CartBloc extends Bloc<CartEvents, CartStates> {
   }
 
   Future<void> _getData(GetCartEvent event, Emitter<CartStates> emit) async {
-    final response = await _dio.getData(url: 'client/cart');
+    final response = await _dio.get( 'client/cart');
     if (response.isSuccess) {
       final model = CartData.fromJson(response.data);
       emit(CartSuccessState(model: model));

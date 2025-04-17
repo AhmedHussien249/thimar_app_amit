@@ -18,7 +18,7 @@ class CategoriesBloc extends Bloc<CategoriesEvents, CategoriesStates> {
   }
 
   Future<void> _getData(GetCategoriesEvent event, Emitter<CategoriesStates> emit) async {
-    final response = await _dio.getData(url: "categories");
+    final response = await _dio.get( "categories");
     if (response.isSuccess) {
       final list = CategoriesData.fromJson(response.data).list;
       emit(GetCategoriesSuccessState(list: list));

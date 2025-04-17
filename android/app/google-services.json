@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "51138398671",
+    "project_id": "thimar-app-amit63",
+    "storage_bucket": "thimar-app-amit63.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51138398671:android:4e4b35086aa05d6ec06aba",
+        "android_client_info": {
+          "package_name": "com.amit.themar_app_amit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51138398671-b8qf2tn82uugm1b7udlotuu6p0e63snv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amit.themar_app_amit",
+            "certificate_hash": "29b1ad7359f2fae3390a7f1155a055caac776011"
+          }
+        },
+        {
+          "client_id": "51138398671-8ah599n6s7s49ho7eig1ovhcqj6221q9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMw0JEgQxKb6qDfL6vkWB4chTYawQLMUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51138398671-8ah599n6s7s49ho7eig1ovhcqj6221q9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "51138398671-430dt2k65n3kpffj7v3jbs18qal2s47n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amit.themarAppAmit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

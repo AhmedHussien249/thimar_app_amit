@@ -18,7 +18,7 @@ class ProductsBloc extends Bloc<ProductsEvents, ProductsStates> {
   }
 
   Future<void> _getData(GetProductsEvent event, Emitter<ProductsStates> emit) async {
-    final response = await _dio.getData(url: "products");
+    final response = await _dio.get( "products");
 
     if (response.isSuccess) {
       final list = ProductsData.fromJson(response.data).list;

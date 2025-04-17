@@ -10,5 +10,6 @@
   "passwordMustBeNotEmpty": "Password Must be Not Empty",
   "weakPassword": "Weak Password",
   "phoneMustBeNotEmpty": "Phone Must be Not Empty",
-  "invalidPhoneNumber": "Invalid Phone Number"
+  "invalidPhoneNumber": "Invalid Phone Number",
+  "cart": "Cart"
 }

@@ -16,5 +16,6 @@
  "passwordMustBeNotEmpty": "يجب كتابة كلمة المرور",
  "weakPassword": "كلمة مرور ضعيفة",
  "phoneMustBeNotEmpty": "يجب كتابة رقم الجوال",
- "invalidPhoneNumber": "رقم الجوال غير صحيح"
+ "invalidPhoneNumber": "رقم الجوال غير صحيح",
+ "cart": "السلة"
 }

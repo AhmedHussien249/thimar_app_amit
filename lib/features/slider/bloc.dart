@@ -19,7 +19,7 @@ class SliderBloc extends Bloc<SliderEvents, SliderStates> {
   }
 
   Future<void> _getData(GetSliderEvent event, Emitter<SliderStates> emit) async {
-    final response = await _dio.getData(url: "sliders");
+    final response = await _dio.get( "sliders");
 
     if (response.isSuccess) {
       final list = SliderData.fromJson(response.data).list;

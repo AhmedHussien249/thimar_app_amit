@@ -25,28 +25,28 @@ class _CartViewState extends State<CartView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          DropdownButton(
-              items: [
-                DropdownMenuItem(
-                  value: "en",
-                  child: Text("En"),
-                ),
-                DropdownMenuItem(
-                  value: "ar",
-                  child: Text("Ar"),
-                ),
-                DropdownMenuItem(
-                  value: "fr",
-                  child: Text("Fr"),
-                ),
-              ],
-              onChanged: (value) {
-                selectedLanguage = value;
-                setState(() {});
-                context.setLocale(Locale(selectedLanguage!));
-              })
-        ],
+        // actions: [
+        //   DropdownButton(
+        //       items: [
+        //         DropdownMenuItem(
+        //           value: "en",
+        //           child: Text("En"),
+        //         ),
+        //         DropdownMenuItem(
+        //           value: "ar",
+        //           child: Text("Ar"),
+        //         ),
+        //         DropdownMenuItem(
+        //           value: "fr",
+        //           child: Text("Fr"),
+        //         ),
+        //       ],
+        //       onChanged: (value) {
+        //         selectedLanguage = value;
+        //         setState(() {});
+        //         context.setLocale(Locale(selectedLanguage!));
+        //       })
+        // ],
         title: Text("cart".tr()),
         centerTitle: true,
       ),

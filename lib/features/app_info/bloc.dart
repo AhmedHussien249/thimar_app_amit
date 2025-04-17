@@ -17,7 +17,7 @@ class AppInfoBloc extends Bloc<AppInfoEvents, AppInfoStates> {
 
   Future<void> _getData(
       GetAppInfoEvent event, Emitter<AppInfoStates> emit) async {
-    final response = await _dio.getData(url: 'endpoint');
+    final response = await _dio.get( 'endpoint');
     if (response.isSuccess) {
       final model = AppInfoData.fromJson(response.data).model;
       emit(GetAppInfoSuccessState(model: model));

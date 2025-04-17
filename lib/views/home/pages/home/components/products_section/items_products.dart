@@ -10,6 +10,8 @@ class _Item extends StatefulWidget {
 }
 
 class _ItemState extends State<_Item> {
+  final bloc = GetIt.I.get<AddToCartBloc>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,7 +57,7 @@ class _ItemState extends State<_Item> {
                     widget.model.isFavorite
                         ? Icons.favorite
                         : Icons.favorite_outline,
-                    color: widget.model.isFavorite ? Colors.green : null,
+                    color: widget.model.isFavorite ? Colors.red : null,
                   ),
                 )
               ],
@@ -91,15 +93,36 @@ class _ItemState extends State<_Item> {
             ),
           ),
           // SizedBox(height: 5.h),
-          Align(
-            alignment: AlignmentDirectional.bottomEnd,
-            child: CircleAvatar(
-              radius: 16.r,
-              backgroundColor: Colors.green,
-              child: Icon(
-                Icons.shopping_cart_outlined,
-                size: 16.sp,
-                color: Colors.white,
+          GestureDetector(
+            onTap: () {
+              bloc.add(AddToCartEvent(id: widget.model.id));
+            },
+            child: Align(
+              alignment: AlignmentDirectional.bottomEnd,
+              child: CircleAvatar(
+                radius: 16.r,
+                backgroundColor: Colors.green,
+                child: BlocBuilder(
+                  bloc: bloc,
+                  builder: (context, state) {
+                    if (state is AddToCartLoadingState&&state.id==widget.model.id)  {
+                      return SizedBox(
+                        height: 16.h,
+                        width: 16.w,
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                          strokeWidth: 2,
+                        ),
+                      );
+                    }
+
+                  return Icon(
+                    Icons.shopping_cart_outlined,
+                    size: 16.sp,
+                    color: Colors.white,
+                  );
+                },
+                ),
               ),
             ),
           ),

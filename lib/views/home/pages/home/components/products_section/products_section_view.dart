@@ -6,6 +6,8 @@ import 'package:shimmer/shimmer.dart';
 import 'package:themar_app_amit/core/designs/app_images.dart';
 import 'package:themar_app_amit/features/products/bloc.dart';
 
+import '../../../../../../features/add_to_cart/bloc.dart';
+
 
 
 
@@ -46,18 +48,36 @@ class _ProductsSectionState extends State<ProductsSection> {
               ),
             );
           } else if (state is GetProductsSuccessState) {
-            return GridView.builder(
-              padding: EdgeInsets.all(16.h.w),
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 20,
-                childAspectRatio: 189 / 300,
-              ),
-              itemBuilder: (context, index) => _Item(model: state.list[index]),
-              itemCount: state.list.length,
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.h),
+                  child: Text(
+                    "الاصناف",
+                    style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                GridView.builder(
+                  padding: EdgeInsets.all(16.h.w),
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 20,
+                    childAspectRatio: 189 / 300,
+                  ),
+                  itemBuilder: (context, index) => _Item(model: state.list[index]),
+                  itemCount: state.list.length,
+                ),
+              ],
             );
           } else {
             return const _Loading();
