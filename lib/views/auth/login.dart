@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:themar_app_amit/core/logic/helper.dart';
+import 'package:themar_app_amit/views/home/view.dart';
 import '../../core/designs/app_button.dart';
 import '../../core/designs/app_images.dart';
 import '../../core/designs/app_input.dart';
@@ -86,7 +87,7 @@ class _LoginViewState extends State<LoginView> {
                     bloc: bloc,
                     listener: (context, state) {
                       if (state is LoginSuccessState) {
-                        navigateTo(SectionsView(), keepHistory: false);
+                        navigateTo(HomeView(), keepHistory: false);
                       }
                     },
                     builder: (context, state) => AppButton(

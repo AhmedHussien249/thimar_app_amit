@@ -1,13 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app_amit/views/auth/login.dart';
 import 'package:themar_app_amit/views/home/view.dart';
+import 'package:themar_app_amit/views/scan_qr_code.dart';
 import 'package:themar_app_amit/views/sections_view.dart';
 import 'package:themar_app_amit/views/test_firebase.dart';
 
 import 'core/logic/app_theme.dart';
+import 'core/logic/bloc_observer.dart';
 import 'core/logic/cache_helper.dart';
 import 'core/logic/helper.dart';
 import 'firebase_options.dart';
@@ -18,6 +21,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
   initServiceLocator();
+  Bloc.observer = AppBlocObserver();
+
   await EasyLocalization.ensureInitialized();
 
   await Firebase.initializeApp(
@@ -55,7 +60,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           home: child),
-      child: const HomeView(),
+      child: const ScanQrCodeView(),
     );
   }
 }
